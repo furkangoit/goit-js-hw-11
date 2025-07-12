@@ -8,6 +8,7 @@ export default defineConfig(({ command }) => {
   return {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
+      base: '/goit-js-hw-11/',
     },
     root: 'src',
     build: {
