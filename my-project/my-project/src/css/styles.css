@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: "Montserrat";
+    background-color: #fff;
+    color: #2E2F42;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#search-form input[type="text"] {
+    padding: 8px 16px;
+    font-size: 16px;
+    width: 272px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    gap: 8px;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+}
+
+#search-form input[type="text"]:hover {
+    border-color: #111;
+}
+
+#search-form input[type="text"]:active {
+    outline: none;
+    border-color: #4E75FF;
+    box-shadow: 0 0 5px rgba(78, 117, 255, 0.5);
+}
+
+#search-form button {
+    padding: 8px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4E75FF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#search-form button:hover {
+    background-color: #6C8CFF;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    gap: 24px;
+    justify-content: center;
+    width: 1128px;
+    margin: 0 auto;
+}
+
+.photo-card {
+    position: relative;
+    width: 360px;
+    height: 200px;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info {
+    position: absolute;
+    color: #2E2F42;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    border-top: 1px solid #808080;
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    border-left: 1px solid #808080;
+}
+
+.info-item {
+    text-align: center;
+    flex: 1;
+}
+
+.info-item b {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.loader:before,
+.loader:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+
+.loader:before {
+    color: #4f70ff;
+    /* Mavi */
+}
+
+.loader:after {
+    color: #FF3D00;
+    /* Turuncu */
+    transform: rotateY(70deg);
+    animation-delay: 0.4s;
+}
+
+/* Gizli class */
+.hidden {
+    display: none !important;
+}
