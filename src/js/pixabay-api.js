@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = "50136749-dac3218f1634fe54e8a0614ce";
+const API_KEY = "51495108-70da61c0e762648aa60ab0fc1";
 const BASE_URL = "https://pixabay.com/api/";
 
 export async function fetchImages(query) {
@@ -14,12 +14,8 @@ export async function fetchImages(query) {
 
   try {
     const response = await axios.get(BASE_URL, { params });
-    if (response.data && Array.isArray(response.data.hits)) {
-      return response.data.hits;
-    } else {
-      throw new Error("Unexpected API response format");
-    }
+    return response.data.hits;
   } catch (error) {
-    throw new Error(`Image fetch failed: ${error.message}`);
+    throw new Error("Image fetch failed");
   }
 }
